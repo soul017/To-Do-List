@@ -1,0 +1,156 @@
+/* responsive.css - Mobile-first responsive design for Todo App */
+
+/* Base mobile styles (applied to all screen sizes) */
+.todo-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .task-input-form {
+    padding: 1rem;
+  }
+  
+  .task-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    .todo-container {
+      padding: 0 1.5rem;
+    }
+    
+    .task-input-form {
+      padding: 1.25rem;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .todo-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .task-input-form {
+      padding: 1.5rem;
+    }
+    
+    .login-paper {
+      padding: 2rem;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .todo-container {
+      max-width: 900px;
+    }
+    
+    .task-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .todo-container {
+      max-width: 1140px;
+    }
+  }
+  
+  /* Utility classes for responsive design */
+  .hide-xs {
+    display: none;
+  }
+  
+  @media (min-width: 576px) {
+    .hide-xs {
+      display: initial;
+    }
+    
+    .hide-sm {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .hide-sm {
+      display: initial;
+    }
+    
+    .hide-md {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .hide-md {
+      display: initial;
+    }
+    
+    .hide-lg {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .hide-lg {
+      display: initial;
+    }
+  }
+  
+  /* Touch-friendly improvements for mobile */
+  @media (max-width: 767px) {
+    /* Increase tap target sizes */
+    button, 
+    .MuiIconButton-root, 
+    .MuiCheckbox-root {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Add more spacing between items in forms */
+    .MuiFormControl-root {
+      margin-bottom: 1rem;
+    }
+    
+    /* Stack form elements vertically */
+    .task-input-form .MuiGrid-container {
+      flex-direction: column;
+    }
+    
+    .task-input-form .MuiGrid-item {
+      width: 100%;
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+    
+    /* Add some margin between form controls on mobile */
+    .task-input-form .MuiGrid-item + .MuiGrid-item {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .header button,
+    .task-input-form,
+    .task-item button {
+      display: none;
+    }
+    
+    body {
+      background-color: white;
+    }
+    
+    .todo-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
